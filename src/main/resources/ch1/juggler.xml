@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<bean id="duke" class="com.frogorf.springinaction.ch1.knight.Juggler">
+		<constructor-arg value="15"></constructor-arg>
+	</bean>
+
+	<bean id="sonnet29" class="com.frogorf.springinaction.ch1.knight.Sonnet29" />
+
+	<bean id="poeticDuke" class="com.frogorf.springinaction.ch1.knight.PoeticJuggler">
+		<constructor-arg value="15" />
+		<constructor-arg ref="sonnet29" />
+	</bean>
+
+	<bean id="theStage" class="com.frogorf.springinaction.ch1.knight.Stage" factory-method="getInstance" />
+
+	<bean id="auditorium" class="com.frogorf.springinaction.ch1.knight.Auditorim" init-method="turnOnLights" destroy-method="turnOffLights" />
+</beans>
