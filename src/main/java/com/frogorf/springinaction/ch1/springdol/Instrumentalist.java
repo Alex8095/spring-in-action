@@ -15,8 +15,8 @@ public class Instrumentalist implements Performer {
 
 	/* @see com.frogorf.springinaction.ch1.knight.Performer#perform() */
 	public void perform() {
-		// TODO Auto-generated method stub
-
+		System.out.println(song);
+		instrument.play();
 	}
 
 	private String song;

@@ -5,11 +5,15 @@
 	http://www.springframework.org/schema/aop
 	http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-	<bean id="kenny" class="com.frogorf.springinaction.ch1.springdol.Instrumentalist">
-		<property name="song" value="Jingle Bells" />
-		<property name="instrument" ref="saxophone" />
+	<bean id="magicBox" class="com.frogorf.springinaction.ch3.MagixBoxImpl">
+		<replaced-method name="getContents" replacer="tigerReplacer" />
 	</bean>
 
-	<bean id="saxophone" class="com.frogorf.springinaction.ch1.springdol.Saxophone" />
-	<bean id="piano" class="com.frogorf.springinaction.ch1.springdol.Piano" />
+	<bean id="harry" class="com.frogorf.springinaction.ch3.Magician">
+		<property name="magicBox" ref="magicBox"></property>
+		<property name="magicWords" value="Bipity boopity boo"></property>
+	</bean>
+
+	<bean id="tigerReplacer" class="com.frogorf.springinaction.ch3.TigerReplacer" />
+
 </beans>
